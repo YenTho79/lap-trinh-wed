@@ -1,0 +1,258 @@
+.reader-page {
+  min-height: 100vh;
+  background: #f8f4ec;
+  color: #1a1612;
+  padding: 32px 16px 60px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.reader-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.reader-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.reader-back {
+  text-decoration: none;
+  color: #8b6b47;
+  font-weight: 600;
+}
+
+.reader-back:hover {
+  color: #6b3a3a;
+}
+
+.reader-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reader-controls button,
+.reader-controls select {
+  border: 1px solid rgba(184, 149, 110, 0.2);
+  background: #fffdf9;
+  color: #1a1612;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reader-controls button:hover,
+.reader-controls select:hover {
+  background: #f2e9dc;
+}
+
+.reader-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.reader-kicker {
+  margin: 0 0 10px;
+  color: #b8956e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+.reader-header h1 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #1a1612;
+}
+
+.reader-content {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(184, 149, 110, 0.12);
+  border-radius: 24px;
+  padding: 36px 32px;
+  line-height: 2;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+}
+
+.reader-content p {
+  margin: 0 0 1.5em;
+  color: #2f2923;
+}
+
+.reader-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.reader-nav-btn {
+  text-decoration: none;
+  background: #1a1612;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.reader-nav-btn:hover {
+  background: #6b3a3a;
+  transform: translateY(-2px);
+}
+
+.reader-notfound {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.reader-notfound a {
+  color: #8b6b47;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Dark mode */
+.reader-dark {
+  background: #161311;
+  color: #f4eee7;
+}
+
+.reader-dark .reader-back {
+  color: #d6b186;
+}
+
+.reader-dark .reader-back:hover {
+  color: #f2d1a7;
+}
+
+.reader-dark .reader-controls button,
+.reader-dark .reader-controls select {
+  background: #241f1b;
+  color: #f4eee7;
+  border: 1px solid rgba(214, 177, 134, 0.16);
+}
+
+.reader-dark .reader-controls button:hover,
+.reader-dark .reader-controls select:hover {
+  background: #312821;
+}
+
+.reader-dark .reader-header h1 {
+  color: #fff8f1;
+}
+
+.reader-dark .reader-content {
+  background: #211b17;
+  border: 1px solid rgba(214, 177, 134, 0.12);
+  box-shadow: none;
+}
+
+.reader-dark .reader-content p {
+  color: #e9dfd3;
+}
+
+.reader-dark .reader-nav-btn {
+  background: #d0a36f;
+  color: #1a1612;
+}
+
+.reader-dark .reader-nav-btn:hover {
+  background: #e0b784;
+}
+
+@media (max-width: 768px) {
+  .reader-page {
+    padding: 20px 12px 40px;
+  }
+
+  .reader-content {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .reader-topbar {
+    align-items: flex-start;
+  }
+
+  .reader-navigation {
+    flex-direction: column;
+  }
+
+  .reader-nav-btn {
+    text-align: center;
+  }
+}
+
+.dark-mode .reader-page {
+  background: #14110f;
+  color: #f3ebe2;
+}
+
+.dark-mode .reader-back {
+  color: #d6b186;
+}
+
+.dark-mode .reader-back:hover {
+  color: #f2d1a7;
+}
+
+.dark-mode .reader-controls button,
+.dark-mode .reader-controls select {
+  background: #241f1b;
+  color: #f4eee7;
+  border: 1px solid rgba(214, 177, 134, 0.16);
+}
+
+.dark-mode .reader-controls button:hover,
+.dark-mode .reader-controls select:hover {
+  background: #312821;
+}
+
+.dark-mode .reader-header h1 {
+  color: #fff8f1;
+}
+
+.dark-mode .reader-kicker {
+  color: #d6b186;
+}
+
+.dark-mode .reader-content {
+  background: #211b17;
+  border: 1px solid rgba(214, 177, 134, 0.12);
+  box-shadow: none;
+}
+
+.dark-mode .reader-content p {
+  color: #e9dfd3;
+}
+
+.dark-mode .reader-nav-btn {
+  background: #d0a36f;
+  color: #1a1612;
+}
+
+.dark-mode .reader-nav-btn:hover {
+  background: #e0b784;
+}
+
+.dark-mode .reader-notfound {
+  background: #1a1512;
+  color: #f3ebe2;
+  box-shadow: none;
+}
+
+.dark-mode .reader-notfound a {
+  color: #d6b186;
+}

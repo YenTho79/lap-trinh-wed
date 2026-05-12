@@ -1,0 +1,412 @@
+.borrow-page {
+  min-height: 100vh;
+  padding: 120px 0 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
+}
+
+.borrow-header {
+  max-width: 1200px;
+  margin: 0 auto 35px;
+  padding: 55px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  color: white;
+  background: var(--ink);
+}
+
+.borrow-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(17, 15, 14, 0.45), rgba(17, 15, 14, 0.82)),
+    url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+}
+
+.borrow-header>* {
+  position: relative;
+  z-index: 2;
+}
+
+.borrow-label {
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.borrow-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 46px;
+  margin: 0;
+}
+
+.borrow-subtitle {
+  max-width: 650px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin-top: 18px;
+}
+
+.borrow-header-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.borrow-back,
+.borrow-main-btn,
+.borrow-login-box button {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 99px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.borrow-back {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.borrow-main-btn,
+.borrow-login-box button {
+  background: var(--ink);
+  color: white;
+}
+
+.borrow-main-btn:hover,
+.borrow-login-box button:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.borrow-stats {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.borrow-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  border-radius: 14px;
+  padding: 25px;
+  transition: var(--transition-smooth);
+}
+
+.borrow-stat-card span {
+  display: block;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.borrow-stat-card strong {
+  font-size: 34px;
+  color: var(--gold);
+}
+
+.borrow-table-card {
+  max-width: 1200px;
+  margin: 0 auto 100px;
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow-main);
+  border: 1px solid var(--border-subtle);
+}
+
+.borrow-table-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.borrow-table-title h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+}
+
+.borrow-table-title p {
+  margin: 0;
+  color: var(--text-light);
+}
+
+.borrow-table-wrapper {
+  overflow-x: auto;
+}
+
+.borrow-table-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.borrow-table-card th {
+  text-align: left;
+  padding: 20px 14px;
+  background: var(--bg-secondary);
+  color: var(--gold);
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--border-subtle);
+}
+
+.borrow-table-card td {
+  padding: 16px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+/* Căn chỉnh các cột cụ thể */
+.borrow-table-card th:nth-child(1), .borrow-table-card td:nth-child(1) { width: 60px; text-align: center; } /* Mã */
+.borrow-table-card th:nth-child(3), .borrow-table-card td:nth-child(3) { min-width: 180px; font-weight: 600; } /* Sách */
+.borrow-table-card th:nth-child(4), .borrow-table-card td:nth-child(4),
+.borrow-table-card th:nth-child(5), .borrow-table-card td:nth-child(5) { min-width: 110px; text-align: center; } /* Các ngày */
+.borrow-table-card th:nth-child(6), .borrow-table-card td:nth-child(6) { min-width: 140px; } /* Tình trạng */
+.borrow-table-card th:nth-child(9), .borrow-table-card td:nth-child(9) { text-align: center; width: 130px; } /* Trạng thái */
+
+.borrow-table-card td:last-child, 
+.borrow-table-card th:last-child {
+  text-align: center;
+  min-width: 180px;
+}
+
+.borrow-status {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-ChoDuyet {
+  background: #fff3cd;
+  color: #8a6500;
+}
+
+.status-DangMuon {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-DaTra {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-QuaHan {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-TuChoi {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.borrow-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.borrow-actions button {
+  border: none;
+  border-radius: 99px;
+  padding: 8px 14px;
+  cursor: pointer;
+  background: var(--ink);
+  color: white;
+}
+
+.borrow-actions .danger {
+  background: #b91c1c;
+}
+
+.done-text {
+  color: green;
+  font-weight: 700;
+}
+
+.borrow-empty {
+  text-align: center;
+  padding: 30px !important;
+  color: var(--text-light);
+}
+
+.borrow-login-box {
+  max-width: 450px;
+  margin: 120px auto;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-luxury);
+  border-radius: 18px;
+  padding: 40px;
+  text-align: center;
+}
+
+.borrow-login-box a {
+  display: block;
+  margin-top: 15px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .borrow-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .borrow-header {
+    padding: 35px;
+  }
+}
+
+.reject-text {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.done-text {
+  color: #15803d;
+  font-weight: 700;
+}
+
+.borrow-home-link {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 12px 20px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.12);
+  font-weight: 700;
+}
+
+.borrow-home-link:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* --- DARK MODE overrides handled by index.css variables --- */
+.dark-mode .borrow-header::before {
+  opacity: 0.6;
+}
+
+.borrow-stats-five {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.borrow-stat-card {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.borrow-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+
+.borrow-stat-card.active {
+  border: 2px solid var(--gold);
+  background: rgba(184, 149, 110, 0.12);
+}
+
+.blacklist-card strong {
+  color: #b91c1c;
+}
+
+.blacklist-card.active {
+  border-color: #b91c1c;
+  background: rgba(185, 28, 28, 0.08);
+}
+
+.status-SachMat {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-DanhSachDen {
+  background: #111827;
+  color: #ffffff;
+}
+
+.status-QuaHan {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.borrow-main-btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #111;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.borrow-form-card {
+  max-width: 1100px;
+  margin: 25px auto;
+  background: var(--bg-card);
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid var(--border-subtle);
+}
+
+.borrow-form-card h3 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.borrow-form-card input,
+.borrow-form-card select,
+.borrow-form-card textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(184, 149, 110, 0.25);
+  font-family: inherit;
+}
+
+.borrow-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.borrow-form-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.borrow-form-actions button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}

@@ -1,0 +1,228 @@
+:root {
+  /* Core Brand Colors */
+  --ink: #110f0e;
+  --charcoal: #25211e;
+  --gold: #b8956e;
+  --gold-light: #e2c9a1;
+  --cream: #faf8f3;
+  --white: #ffffff;
+  
+  /* Theme-dependent Variables (Light Mode Default) */
+  --bg-primary: var(--cream);
+  --bg-secondary: var(--white);
+  --bg-card: var(--white);
+  --bg-header: rgba(250, 248, 243, 0.95);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  
+  --text-primary: var(--ink);
+  --text-secondary: #6b6560;
+  --text-muted: #999;
+  
+  --border-subtle: rgba(184, 149, 110, 0.15);
+  --border-input: rgba(184, 149, 110, 0.3);
+  
+  --shadow-main: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+  /* Legacy Aliases for Compatibility */
+  --bg-page: var(--bg-primary);
+  --text-main: var(--text-primary);
+  --text-light: var(--text-secondary);
+  --bg-card-main: var(--bg-card);
+  --logo-filter: none;
+  
+  /* Shared Aesthetics */
+  --gold-gradient: linear-gradient(135deg, #b8956e 0%, #e2c9a1 50%, #b8956e 100%);
+  --gold-shimmer: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode, .dark-mode {
+  --bg-primary: var(--ink);
+  --bg-secondary: #161412;
+  --bg-card: #1c1a18;
+  --bg-header: rgba(17, 15, 14, 0.98);
+  --bg-glass: rgba(0, 0, 0, 0.2);
+  
+  --text-primary: var(--cream);
+  --text-secondary: #a8a29e;
+  --text-muted: #777;
+  
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-input: rgba(255, 255, 255, 0.1);
+  
+  --shadow-main: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.2);
+
+  /* Legacy Aliases */
+  --bg-page: var(--bg-primary);
+  --text-main: var(--text-primary);
+  --text-light: var(--text-secondary);
+  --bg-card-main: var(--bg-card);
+  --logo-filter: brightness(0) invert(1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none !important;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global Luxury Inputs */
+input,
+select,
+textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border-input);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(184, 149, 110, 0.2);
+  background: var(--bg-secondary);
+}
+
+.input-disabled {
+  background-color: var(--bg-glass) !important;
+  cursor: not-allowed !important;
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+/* Global Luxury Buttons */
+button,
+.book-btn {
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: var(--transition-smooth);
+  cursor: none !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* --- Luxury Aesthetics & Effects --- */
+* {
+  cursor: none !important;
+  /* Custom luxury cursor logic */
+}
+
+#luxury-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #b8956e;
+  /* Hardcoded gold for safety */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+
+#luxury-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #b8956e;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, border 0.3s ease;
+}
+
+.gs-gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.gs-gold-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-shimmer);
+  animation: shimmer 4s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+
+  20% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/* --- Minimalist Luxury Reveal (Optimized) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger delays */
+.stagger-1 {
+  transition-delay: 0.1s;
+}
+
+.stagger-2 {
+  transition-delay: 0.2s;
+}
+
+.stagger-3 {
+  transition-delay: 0.3s;
+}
+
+.stagger-4 {
+  transition-delay: 0.4s;
+}
+
+/* Global Logo Theme Handling */
+.logo img, .footer-logo img {
+  filter: var(--logo-filter);
+  transition: filter 0.4s ease, transform 0.3s ease;
+}
