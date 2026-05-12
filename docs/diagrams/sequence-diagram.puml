@@ -1,0 +1,40 @@
+```puml id="rkknpi"
+@startuml
+title Sơ đồ tuần tự - Xác thực JWT
+
+actor "Người dùng" as User
+
+participant "Frontend React\n(Login.jsx)" as FE
+participant "Django REST API\n(LoginView)" as BE
+database "Cơ sở dữ liệu MySQL" as DB
+
+== Quy trình đăng nhập ==
+
+User -> FE : Nhập tài khoản và mật khẩu
+
+FE -> BE : POST /api/login/\nJSON {username, password}
+
+BE -> DB : Kiểm tra tài khoản
+DB --> BE : Thông tin người dùng
+
+BE -> BE : Xác thực mật khẩu\nTạo JWT Token
+
+BE --> FE : Response JSON\n{ token, user_info }
+
+FE -> FE : Lưu token vào localStorage
+
+== Các request sau ==
+
+User -> FE : Truy cập chức năng hệ thống
+
+FE -> BE : GET /api/books/\nAuthorization: Bearer <token>
+
+BE -> BE : Kiểm tra JWT Token
+
+BE -> DB : Truy vấn dữ liệu
+DB --> BE : Dữ liệu hệ thống
+
+BE --> FE : JSON Response
+
+@enduml
+```

@@ -1,0 +1,47 @@
+```puml id="3pvixg"
+@startuml
+left to right direction
+
+actor Guest
+actor Member
+actor Admin
+
+rectangle "Hệ thống Review Sách" {
+
+  usecase "Đăng ký" as UC1
+  usecase "Đăng nhập" as UC2
+  usecase "Xem sách" as UC3
+  usecase "Đọc chương" as UC4
+  usecase "Viết đánh giá" as UC5
+  usecase "Mượn sách" as UC6
+  usecase "Xem lịch sử mượn" as UC7
+
+  usecase "Quản lý sách" as UC8
+  usecase "Quản lý kho" as UC9
+  usecase "Duyệt mượn sách" as UC10
+  usecase "Quản lý người dùng" as UC11
+
+  usecase "Kiểm tra tồn kho" as UC12
+  usecase "Xác thực JWT" as UC13
+}
+
+Guest --> UC1
+Guest --> UC2
+Guest --> UC3
+Guest --> UC4
+
+Member --> UC5
+Member --> UC6
+Member --> UC7
+
+Admin --> UC8
+Admin --> UC9
+Admin --> UC10
+Admin --> UC11
+
+UC6 .> UC12 : <<include>>
+UC5 .> UC13 : <<include>>
+UC6 .> UC13 : <<include>>
+
+@enduml
+```

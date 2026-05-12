@@ -1,0 +1,37 @@
+@startuml
+title Sơ đồ kiến trúc 3 lớp - Hệ thống Review Sách
+
+skinparam componentStyle rectangle
+skinparam shadowing true
+skinparam roundcorner 15
+
+package "Lớp giao diện\n(Presentation Layer)" {
+
+  [ReactJS] as React
+  [Bootstrap] as Bootstrap
+  [Axios API Client] as Axios
+
+  React --> Axios
+  Bootstrap --> React
+}
+
+package "Lớp xử lý nghiệp vụ\n(Logic Layer)" {
+
+  [Django REST Framework] as Django
+  [JWT Authentication] as JWT
+  [Swagger / drf-spectacular] as Swagger
+
+  Django --> JWT
+  Swagger --> Django
+}
+
+package "Lớp dữ liệu\n(Data Layer)" {
+
+  database "Cơ sở dữ liệu MySQL" as MySQL
+}
+
+Axios --> Django : RESTful API / JSON
+
+Django --> MySQL : SQL Queries
+
+@enduml

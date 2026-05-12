@@ -1,0 +1,41 @@
+```puml id="7aj9xg"
+@startuml
+title Activity Diagram - Quy trình mượn sách
+
+start
+
+:Người dùng chọn sách;
+
+:Nhấn nút "Mượn sách";
+
+:Hệ thống gửi yêu cầu mượn;
+
+if (Còn sách trong kho?) then (Có)
+
+  :Tạo phiếu mượn;
+
+  :Admin duyệt yêu cầu;
+
+  if (Admin đồng ý?) then (Có)
+
+    :Cập nhật trạng thái "Đang mượn";
+
+    :Trừ số lượng kho;
+
+    :Thông báo mượn thành công;
+
+  else (Không)
+
+    :Từ chối yêu cầu mượn;
+
+  endif
+
+else (Không)
+
+  :Thông báo hết sách;
+
+endif
+
+stop
+@enduml
+```
